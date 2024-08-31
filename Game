@@ -1,0 +1,22 @@
+#!/bin/bash
+
+sayi=7
+echo -e "\033[35mLütfen 1-9 arasında bir rakam seçiniz, girdiğiniz sayı yazı formatında değil rakam formatında olmalıdır:\033[0m"
+read tahmin
+
+
+if [[ $tahmin -eq $sayi ]]
+then
+    echo 'Doğru Tahmin'
+elif [[ $tahmin -lt $sayi && $tahmin -ge 1 ]]
+then
+    echo 'Sayıyı biraz arttır'
+elif [[ $tahmin -gt $sayi && $tahmin -le 9 ]]
+then
+    echo 'Sayıyı azalt'
+elif [[ $tahmin -lt 1 || $tahmin -gt 9 ]]
+then
+    echo 'Girdiğiniz sayı 1-9 arasında olmalıdır'
+else
+    echo 'Lütfen rakam formatında girin'
+fi
